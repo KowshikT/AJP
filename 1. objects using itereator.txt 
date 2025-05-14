@@ -1,0 +1,47 @@
+import java.util.*;
+
+public class Program1 {
+    public static void main(String[] args) {
+        Vector<String> names = new Vector<>();
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
+
+        // Iterator
+        System.out.println("Using Iterator:");
+        Iterator<String> it = names.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+
+        // Enumeration
+        System.out.println("\nUsing Enumeration:");
+        Enumeration<String> en = names.elements();
+        while (en.hasMoreElements()) {
+            System.out.println(en.nextElement());
+        }
+
+        // Advanced for loop
+        System.out.println("\nUsing Advanced For Loop:");
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+}
+/*
+Output:
+Using Iterator:
+Alice
+Bob
+Charlie
+
+Using Enumeration:
+Alice
+Bob
+Charlie
+
+Using Advanced For Loop:
+Alice
+Bob
+Charlie
+*/

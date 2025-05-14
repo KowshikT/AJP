@@ -1,0 +1,35 @@
+interface Command {
+    void execute();
+}
+
+class Light {
+    void on() {
+        System.out.println("Light is ON");
+    }
+}
+
+class LightOnCommand implements Command {
+    Light light;
+    LightOnCommand(Light l) { light = l; }
+    public void execute() { light.on(); }
+}
+
+class Remote {
+    Command cmd;
+    void setCommand(Command c) { cmd = c; }
+    void pressButton() { cmd.execute(); }
+}
+
+public class Program10 {
+    public static void main(String[] args) {
+        Light light = new Light();
+        Command cmd = new LightOnCommand(light);
+        Remote remote = new Remote();
+        remote.setCommand(cmd);
+        remote.pressButton();
+    }
+}
+/*
+Output:
+Light is ON
+*/

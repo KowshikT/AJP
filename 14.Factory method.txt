@@ -1,0 +1,27 @@
+abstract class Transport {
+    abstract void deliver();
+}
+
+class Truck extends Transport {
+    void deliver() {
+        System.out.println("Delivered by Truck");
+    }
+}
+
+class Logistics {
+    Transport createTransport() {
+        return new Truck();
+    }
+}
+
+public class Program14 {
+    public static void main(String[] args) {
+        Logistics logistics = new Logistics();
+        Transport t = logistics.createTransport();
+        t.deliver();
+    }
+}
+/*
+Output:
+Delivered by Truck
+*/

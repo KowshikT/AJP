@@ -1,0 +1,16 @@
+import java.util.regex.*;
+
+public class Program4 {
+    public static void main(String[] args) {
+        String input = "My phone number is 9876543210";
+        Pattern pattern = Pattern.compile("\\d{10}");
+        Matcher matcher = pattern.matcher(input);
+        if (matcher.find()) {
+            System.out.println("Found: " + matcher.group());
+        }
+    }
+}
+/*
+Output:
+Found: 9876543210
+*/

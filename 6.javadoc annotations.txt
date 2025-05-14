@@ -1,0 +1,21 @@
+/**
+ * Program6 demonstrates Javadoc, annotations, and assertions.
+ */
+public class Program6 {
+    @Deprecated
+    static void oldMethod() {
+        System.out.println("Old Method");
+    }
+
+    public static void main(String[] args) {
+        oldMethod();
+        int val = 5;
+        assert val > 0 : "Value must be positive";
+        System.out.println("Assertions passed");
+    }
+}
+/*
+Output:
+Old Method
+Assertions passed
+*/

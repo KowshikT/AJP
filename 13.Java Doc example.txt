@@ -1,0 +1,15 @@
+
+public class Program13 {
+    /**
+     * Adds two integers.
+     * @param a First number
+     * @param b Second number
+     * @return Sum
+     */
+    public int add(int a, int b) {
+        return a + b;
+    }
+}
+/*
+No output; used for generating documentation.
+*/

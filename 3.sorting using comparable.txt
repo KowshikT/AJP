@@ -1,0 +1,44 @@
+import java.util.*;
+
+class Student implements Comparable<Student> {
+    String name;
+    int marks;
+
+    Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    public int compareTo(Student s) {
+        return this.marks - s.marks;
+    }
+
+    public String toString() {
+        return name + ": " + marks;
+    }
+}
+
+class SortByName implements Comparator<Student> {
+    public int compare(Student a, Student b) {
+        return a.name.compareTo(b.name);
+    }
+}
+
+public class Program3 {
+    public static void main(String[] args) {
+        List<Student> list = new ArrayList<>();
+        list.add(new Student("Zara", 88));
+        list.add(new Student("Mike", 95));
+
+        Collections.sort(list); // Comparable
+        System.out.println("Sorted by marks: " + list);
+
+        Collections.sort(list, new SortByName()); // Comparator
+        System.out.println("Sorted by name: " + list);
+    }
+}
+/*
+Output:
+Sorted by marks: [Zara: 88, Mike: 95]
+Sorted by name: [Mike: 95, Zara: 88]
+*/

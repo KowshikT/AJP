@@ -1,0 +1,27 @@
+interface Animal {
+    void speak();
+}
+
+class Dog implements Animal {
+    public void speak() {
+        System.out.println("Bark");
+    }
+}
+
+class AnimalFactory {
+    static Animal getAnimal(String type) {
+        if (type.equals("dog")) return new Dog();
+        return null;
+    }
+}
+
+public class Program8 {
+    public static void main(String[] args) {
+        Animal a = AnimalFactory.getAnimal("dog");
+        a.speak();
+    }
+}
+/*
+Output:
+Bark
+*/

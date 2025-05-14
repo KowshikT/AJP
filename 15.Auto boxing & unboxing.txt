@@ -1,0 +1,11 @@
+public class Program15 {
+    public static void main(String[] args) {
+        Integer a = 10;  // Autoboxing
+        int b = a;       // Unboxing
+        System.out.println("Integer: " + a + ", int: " + b);
+    }
+}
+/*
+Output:
+Integer: 10, int: 10
+*/
